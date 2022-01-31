@@ -32,9 +32,10 @@ public class UI {
         System.out.println("------------------------------------------------");
         System.out.println("Menu de opciones");
         System.out.println("1. Insertar en lista ordenada");
-        System.out.println("2. Insertar en cola");
-        System.out.println("3. Push en pila");
-        System.out.println("4. Ver estructuras");
+        System.out.println("3. Insertar en cola FIFO");
+        System.out.println("4. Atender cola FIFO");
+        System.out.println("5. Push en pila");
+        System.out.println("99. Ver estructuras");
         System.out.println("100. Salir");
         System.out.println("------------------------------------------------");
     }
@@ -58,18 +59,23 @@ public class UI {
 
                 break;
 
-            case 2://Insertar en cola
+            case 3://Insertar en cola
+                System.out.println("Insertando en cola");
                 valor = leerOpcion();
 
                 gestor.insertarEnCola(valor);
                 System.out.println("Valor insertado con exito");
                 break;
 
-            case 3://Insertar en pila
-
+            case 4://Atender cola
+                if (gestor.atenderCola()) {
+                    System.out.println("Se ha atendido el primer elemento de la cola");
+                } else {
+                    System.out.println("No se pudo realizar la operacion");
+                }
                 break;
 
-            case 4:
+            case 99:
                 System.out.println("Mostrando estructuras de datos");
                 System.out.println("Lista: " );
                 System.out.println("Cola: " + gestor.imprimirCola() );

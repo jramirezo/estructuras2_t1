@@ -1,5 +1,7 @@
 package estructuras;
 
+import java.util.Objects;
+
 public class Gestor {
 
     private Cola cola;
@@ -12,8 +14,13 @@ public class Gestor {
         cola.insertarElemento(valor);
     }
 
-    public void atenderCola(int valor) {
+    public boolean atenderCola() {
+        Nodo inicio = cola.atender();
 
+        if (Objects.nonNull(inicio)) {
+            return true;
+        }
+        return false;
     }
 
     public String imprimirCola() {
