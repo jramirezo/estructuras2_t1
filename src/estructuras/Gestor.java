@@ -41,4 +41,8 @@ public class Gestor {
     public int popPila(){
         return pila.pop();
     }
+
+    public int getInicioCola(){
+        return cola.getInicio();
+    }
 }

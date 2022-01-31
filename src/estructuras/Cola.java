@@ -89,6 +89,10 @@ public class Cola {
         return false;
     }
 
+    public int getInicio(){
+        return this.incio.getValor();
+    }
+
     public String print() {
         String msj = "";
 

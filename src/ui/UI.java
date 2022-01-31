@@ -36,6 +36,7 @@ public class UI {
         System.out.println("4. Atender cola FIFO");
         System.out.println("5. Push en pila");
         System.out.println("6. Pasar el tope de la pila a la cola");
+        System.out.println("7. Pasar el inicio de la cola al tope de la pila");
         System.out.println("99. Ver estructuras");
         System.out.println("100. Salir");
         System.out.println("------------------------------------------------");
@@ -89,6 +90,13 @@ public class UI {
             case 6:
                 int topePila = gestor.popPila();
                 gestor.insertarEnCola(topePila);
+                System.out.println("Cola: " + gestor.imprimirCola() );
+                System.out.println("Pila: " +  gestor.imprimirPila());
+
+            case 7:
+                int inicio = gestor.getInicioCola();
+                gestor.pushPila(inicio);
+                gestor.atenderCola();
                 System.out.println("Cola: " + gestor.imprimirCola() );
                 System.out.println("Pila: " +  gestor.imprimirPila());
 
