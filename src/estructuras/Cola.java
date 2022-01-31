@@ -1,4 +1,4 @@
-package structures;
+package estructuras;
 
 import java.util.Objects;
 
@@ -93,7 +93,7 @@ public class Cola {
         String msj = "";
 
         if ( !esVacia() ) {
-            msj = "Cola: [" + this.incio.getInfo();
+            msj = "Cola: [" + this.incio.getValor();
 
             if (!Objects.isNull(this.incio.getSiguiente())) {
                 msj += "," + this.incio.getSiguiente().print();
