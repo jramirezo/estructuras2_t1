@@ -35,6 +35,7 @@ public class UI {
         System.out.println("3. Insertar en cola FIFO");
         System.out.println("4. Atender cola FIFO");
         System.out.println("5. Push en pila");
+        System.out.println("6. Pasar el tope de la pila a la cola");
         System.out.println("99. Ver estructuras");
         System.out.println("100. Salir");
         System.out.println("------------------------------------------------");
@@ -75,11 +76,27 @@ public class UI {
                 }
                 break;
 
+            case 5://Atender cola
+                System.out.println("Insertando en pila");
+                valor = leerOpcion();
+                if (gestor.pushPila(valor)) {
+                    System.out.println("Se ha agregado el numero con exito a la pila");
+                } else {
+                    System.out.println("No se pudo realizar la operacion");
+                }
+                break;
+
+            case 6:
+                int topePila = gestor.popPila();
+                gestor.insertarEnCola(topePila);
+                System.out.println("Cola: " + gestor.imprimirCola() );
+                System.out.println("Pila: " +  gestor.imprimirPila());
+
             case 99:
                 System.out.println("Mostrando estructuras de datos");
                 System.out.println("Lista: " );
                 System.out.println("Cola: " + gestor.imprimirCola() );
-                System.out.println("Pila: " );
+                System.out.println("Pila: " +  gestor.imprimirPila());
                 break;
             case 100:
                 continuar = false;

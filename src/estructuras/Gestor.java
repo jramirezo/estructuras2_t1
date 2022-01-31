@@ -6,6 +6,8 @@ public class Gestor {
 
     private Cola cola;
 
+    private static Pila pila = new Pila();
+
     public Gestor() {
         cola = new Cola();
     }
@@ -25,5 +27,18 @@ public class Gestor {
 
     public String imprimirCola() {
         return cola.print();
+    }
+
+    public boolean pushPila(int dato){
+        boolean agregado = pila.push(dato);
+        return agregado;
+    }
+
+    public String imprimirPila(){
+        return pila.listar();
+    }
+
+    public int popPila(){
+        return pila.pop();
     }
 }

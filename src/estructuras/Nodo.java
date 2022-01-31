@@ -17,6 +17,11 @@ public class Nodo {
         this.siguiente = null;
     }
 
+    public Nodo(){
+        this.valor = 0;
+        this.siguiente = null;
+    };
+
     public int getValor() {
         return valor;
     }
