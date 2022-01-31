@@ -1,28 +1,28 @@
-package structures;
+package estructuras;
 
 import java.util.Objects;
 
 public class Nodo {
 
-    private int info;
+    private int valor;
     private Nodo siguiente;
 
-    public Nodo(int info, Nodo siguiente) {
-        this.info = info;
+    public Nodo(int valor, Nodo siguiente) {
+        this.valor = valor;
         this.siguiente = siguiente;
     }
 
-    public Nodo(int info) {
-        this.info = info;
+    public Nodo(int valor) {
+        this.valor = valor;
         this.siguiente = null;
     }
 
-    public int getInfo() {
-        return info;
+    public int getValor() {
+        return valor;
     }
 
-    public void setInfo(int info) {
-        this.info = info;
+    public void setValor(int valor) {
+        this.valor = valor;
     }
 
     public Nodo getSiguiente() {
@@ -36,7 +36,7 @@ public class Nodo {
     public String print() {
         String msj = "";
 
-        msj = this.info + "";
+        msj = this.valor + "";
         if (!Objects.isNull(this.getSiguiente())) {
             msj += "," + this.getSiguiente().print();
         }

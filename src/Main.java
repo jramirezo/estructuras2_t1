@@ -1,4 +1,4 @@
-import structures.*;
+import estructuras.*;
 
 public class Main {
 
