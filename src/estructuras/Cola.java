@@ -93,13 +93,11 @@ public class Cola {
         String msj = "";
 
         if ( !esVacia() ) {
-            msj = "[" + this.incio.getValor();
+            msj = this.incio.getValor() + "";
 
             if (!Objects.isNull(this.incio.getSiguiente())) {
                 msj += "," + this.incio.getSiguiente().print();
             }
-            msj += "]";
-            //msj += this.end.getInfo() + "";
         } else {
             msj = "La cola está vacía";
         }
