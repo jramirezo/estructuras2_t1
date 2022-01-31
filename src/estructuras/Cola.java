@@ -32,7 +32,6 @@ public class Cola {
             }
             this.fin.setSiguiente(nuevoElemento);
         }
-
         this.fin = nuevoElemento;
         this.longitud++;
     }
@@ -62,10 +61,11 @@ public class Cola {
 
                 if (posicion == 1) {
                     aux = aux.getSiguiente();
+                    this.incio = aux;
+
                     if (!Objects.isNull(aux)) {
                         siguiente = aux.getSiguiente();
                     }
-                    this.incio = aux;
                 } else {
                     for (int i = 1; i < posicion - 1; i++) {
                         aux = aux.getSiguiente();
@@ -93,7 +93,7 @@ public class Cola {
         String msj = "";
 
         if ( !esVacia() ) {
-            msj = "Cola: [" + this.incio.getValor();
+            msj = "[" + this.incio.getValor();
 
             if (!Objects.isNull(this.incio.getSiguiente())) {
                 msj += "," + this.incio.getSiguiente().print();
