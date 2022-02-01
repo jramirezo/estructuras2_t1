@@ -37,6 +37,8 @@ public class UI {
         System.out.println("5. Push en pila");
         System.out.println("6. Pasar el tope de la pila a la cola");
         System.out.println("7. Pasar el inicio de la cola al tope de la pila");
+        System.out.println("8. Pasar un elemento de la lista a la pila");
+        System.out.println("9. Pasar un elemento de la lista a la cola");
         System.out.println("99. Ver estructuras");
         System.out.println("100. Salir");
         System.out.println("------------------------------------------------");
@@ -54,6 +56,7 @@ public class UI {
     public boolean ejecutarOpcion(int opcion) throws IOException {
         boolean continuar = true;
         int valor;
+
 
 
         switch (opcion) {
@@ -104,6 +107,35 @@ public class UI {
                 gestor.atenderCola();
                 System.out.println("Cola: " + gestor.imprimirCola() );
                 System.out.println("Pila: " +  gestor.imprimirPila());
+                break;
+            case 8://Pasar un elemento de la lista a la pila
+
+                System.out.println("Digite el valor que desea pasar");
+                valor = leerOpcion();
+                if (gestor.buscarValorLista(valor)) {
+
+                    gestor.removerElementoLista(valor);
+                    gestor.atenderCola();
+                    System.out.println("Lista: " + gestor.imprimirLista());
+                    System.out.println("Pila: " +  gestor.imprimirPila());
+                }else{
+                    System.out.println("Valor no pertenece a la lista");
+                }
+
+                break;
+            case 9://Pasar un elemento de la lista a la cola
+
+                System.out.println("Digite el valor que desea pasar");
+                valor = leerOpcion();
+                if (gestor.buscarValorLista(valor)) {
+
+                    gestor.removerElementoLista(valor);
+                    gestor.insertarEnCola(valor);
+                    System.out.println("Lista: " + gestor.imprimirLista());
+                    System.out.println("Cola: " +  gestor.imprimirCola());
+                }else{
+                    System.out.println("Valor no pertenece a la lista");
+                }
                 break;
 
             case 99:

@@ -55,4 +55,12 @@ public class Gestor {
     public String imprimirLista(){
         return lista.listar();
     }
+
+    public void removerElementoLista(int num){
+        lista.removerPorReferencia(num);
+    }
+
+    public boolean buscarValorLista(int num){
+        return lista.buscar(num);
+    }
 }
