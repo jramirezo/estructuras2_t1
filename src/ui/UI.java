@@ -87,11 +87,12 @@ public class UI {
                 }
                 break;
 
-            case 6:
+            case 6://Pasar el tope de la pila a la cola
                 int topePila = gestor.popPila();
                 gestor.insertarEnCola(topePila);
                 System.out.println("Cola: " + gestor.imprimirCola() );
                 System.out.println("Pila: " +  gestor.imprimirPila());
+                break;
 
             case 7:
                 int inicio = gestor.getInicioCola();
@@ -99,6 +100,7 @@ public class UI {
                 gestor.atenderCola();
                 System.out.println("Cola: " + gestor.imprimirCola() );
                 System.out.println("Pila: " +  gestor.imprimirPila());
+                break;
 
             case 99:
                 System.out.println("Mostrando estructuras de datos");
