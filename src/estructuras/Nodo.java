@@ -38,13 +38,4 @@ public class Nodo {
         this.siguiente = siguiente;
     }
 
-    public String print() {
-        String msj = "";
-
-        msj = this.valor + "";
-        if (!Objects.isNull(this.getSiguiente())) {
-            msj += "," + this.getSiguiente().print();
-        }
-        return msj;
-    }
 }

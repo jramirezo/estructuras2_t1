@@ -94,7 +94,7 @@ public class UI {
                 System.out.println("Pila: " +  gestor.imprimirPila());
                 break;
 
-            case 7:
+            case 7://Pasar el inicio de la cola al tope de la pila
                 int inicio = gestor.getInicioCola();
                 gestor.pushPila(inicio);
                 gestor.atenderCola();
@@ -108,6 +108,7 @@ public class UI {
                 System.out.println("Cola: " + gestor.imprimirCola() );
                 System.out.println("Pila: " +  gestor.imprimirPila());
                 break;
+
             case 100:
                 continuar = false;
                 break;

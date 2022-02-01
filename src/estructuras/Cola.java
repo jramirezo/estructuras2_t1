@@ -97,11 +97,15 @@ public class Cola {
         String msj = "";
 
         if ( !esVacia() ) {
-            msj = this.incio.getValor() + "";
+            Nodo aux = this.incio;
 
-            if (!Objects.isNull(this.incio.getSiguiente())) {
-                msj += "," + this.incio.getSiguiente().print();
+            for (int i = 1; i < this.longitud; i++) {
+                msj += aux.getValor() + ", ";
+                aux = aux.getSiguiente();
             }
+
+            msj += this.fin.getValor();
+
         } else {
             msj = "La cola está vacía";
         }
