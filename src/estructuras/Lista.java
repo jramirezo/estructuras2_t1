@@ -85,6 +85,8 @@ public class Lista {
                     if(aux.getValor() > nuevo.getValor()){
                         nuevo.setSiguiente(aux);
                         nodoAnterior.setSiguiente(nuevo);
+                        // Incrementa el contador de tamaño de la lista.
+                        tamanio++;
 
                     }
                     else{
@@ -99,8 +101,7 @@ public class Lista {
 
             }
         }
-        // Incrementa el contador de tamaño de la lista.
-        tamanio++;
+
     }
 
     public boolean buscar(int referencia){
