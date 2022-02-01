@@ -49,7 +49,7 @@ public class Gestor {
     }
 
     public void insertarEnLista(int num){
-        lista.agregarAlFinal(num);
+        lista.agregarEnMedio(num);
     }
 
     public String imprimirLista(){

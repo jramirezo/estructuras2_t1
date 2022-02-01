@@ -69,15 +69,35 @@ public class Lista {
         // Agrega al valor al nodo.
         nuevo.setValor(valor);
         // Consulta si la lista esta vacia.
-        if (esVacia()) {
+        if (esVacia() || nuevo.getValor() < inicio.getValor()) {
             // Inicializa la lista agregando como inicio al nuevo nodo.
-            inicio = nuevo;
+            agregarAlInicio(valor);
             // Caso contrario va agregando los nodos al inicio de la lista.
         } else{
-            // Une el nuevo nodo con la lista existente.
-            nuevo.setSiguiente(inicio);
-            // Renombra al nuevo nodo como el inicio de la lista.
-            inicio = nuevo;
+
+            Nodo nodoAnterior = new Nodo();
+            Nodo aux = inicio;
+
+            for(int i = 0; i < tamanio; i++){
+
+                if(nuevo.getValor() < aux.getValor() || aux.getSiguiente() == null){
+
+                    if(aux.getValor() > nuevo.getValor()){
+                        nuevo.setSiguiente(aux);
+                        nodoAnterior.setSiguiente(nuevo);
+
+                    }
+                    else{
+                        if(aux.getSiguiente() == null || aux.getValor() == nuevo.getValor() || aux.getValor() < nuevo.getValor()){
+                            agregarAlFinal(nuevo.getValor());
+
+                        }
+                    }
+                    break;
+                }
+
+
+            }
         }
         // Incrementa el contador de tamaño de la lista.
         tamanio++;
