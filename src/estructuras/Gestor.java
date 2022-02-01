@@ -5,11 +5,13 @@ import java.util.Objects;
 public class Gestor {
 
     private Cola cola;
+    private Lista lista;
 
     private static Pila pila = new Pila();
 
     public Gestor() {
         cola = new Cola();
+        lista = new Lista();
     }
 
     public void insertarEnCola(int valor) {
@@ -44,5 +46,13 @@ public class Gestor {
 
     public int getInicioCola(){
         return cola.getInicio();
+    }
+
+    public void insertarEnLista(int num){
+        lista.agregarAlFinal(num);
+    }
+
+    public String imprimirLista(){
+        return lista.listar();
     }
 }

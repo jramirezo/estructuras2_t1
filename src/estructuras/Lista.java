@@ -63,6 +63,26 @@ public class Lista {
         tamanio++;
     }
 
+    public void agregarEnMedio(int valor){
+        // Define un nuevo nodo.
+        Nodo nuevo = new Nodo();
+        // Agrega al valor al nodo.
+        nuevo.setValor(valor);
+        // Consulta si la lista esta vacia.
+        if (esVacia()) {
+            // Inicializa la lista agregando como inicio al nuevo nodo.
+            inicio = nuevo;
+            // Caso contrario va agregando los nodos al inicio de la lista.
+        } else{
+            // Une el nuevo nodo con la lista existente.
+            nuevo.setSiguiente(inicio);
+            // Renombra al nuevo nodo como el inicio de la lista.
+            inicio = nuevo;
+        }
+        // Incrementa el contador de tamaño de la lista.
+        tamanio++;
+    }
+
     public boolean buscar(int referencia){
         // Crea una copia de la lista.
         Nodo aux = inicio;
@@ -77,7 +97,7 @@ public class Lista {
                 encontrado = true;
             }
             else{
-                // Avansa al siguiente. nodo.
+                // Avanza al siguiente. nodo.
                 aux = aux.getSiguiente();
             }
         }
@@ -111,22 +131,26 @@ public class Lista {
         }
     }
 
-    public void listar(){
-        // Verifica si la lista contiene elementoa.
-        if (!esVacia()) {
-            // Crea una copia de la lista.
-            Nodo aux = inicio;
+    public String listar(){
+
+        String datos = "";
+        Nodo aux = inicio;
+        int tamannio = this.getTamanio();
+        if(!esVacia()){
             // Posicion de los elementos de la lista.
             int i = 0;
             // Recorre la lista hasta el final.
             while(aux != null){
                 // Imprime en pantalla el valor del nodo.
-                System.out.print(i + ".[ " + aux.getValor() + " ]" + " ->  ");
+                datos += String.valueOf(aux.getValor()) + " ";
                 // Avanza al siguiente nodo.
                 aux = aux.getSiguiente();
                 // Incrementa el contador de la posión.
                 i++;
             }
+        } else {
+            datos = "La lista está vacía";
         }
+        return datos;
     }
 }

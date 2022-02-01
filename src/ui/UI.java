@@ -58,7 +58,11 @@ public class UI {
 
         switch (opcion) {
             case 1://Insertar en lista ordenada
+                System.out.println("Insertando en lista");
+                valor = leerOpcion();
 
+                gestor.insertarEnLista(valor);
+                System.out.println("Valor insertado con exito");
                 break;
 
             case 3://Insertar en cola
@@ -104,7 +108,7 @@ public class UI {
 
             case 99:
                 System.out.println("Mostrando estructuras de datos");
-                System.out.println("Lista: " );
+                System.out.println("Lista: " + gestor.imprimirLista());
                 System.out.println("Cola: " + gestor.imprimirCola() );
                 System.out.println("Pila: " +  gestor.imprimirPila());
                 break;
